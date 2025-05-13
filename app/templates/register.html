@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register | MIRA</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+</head>
+<body>
+    <div class="register-container">
+        <!-- Sol taraf: logo + yazı -->
+        <div class="left-side">
+            <h1>Welcome To</h1>
+            <img src="{{ url_for('static', filename='images/miralogo.png') }}" alt="Mira Logo" class="mira-logo">
+        </div>
+
+        <!-- Sağ taraf: kayıt formu -->
+        <div class="right-side">
+            <h2 class="register-title">Create an Account</h2>
+            <form method="POST">
+                <input type="text" name="name" placeholder="Full Name" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit" class="register-btn">Sign Up</button>
+            </form>
+
+            <p class="login-text">Already have an account? <a href="{{ url_for('auth.login') }}">Login</a></p>
+        </div>
+    </div>
+</body>
+</html>

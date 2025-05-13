@@ -1,0 +1,21 @@
+from flask import Blueprint, request, jsonify
+
+brand_bp = Blueprint("brand", __name__)
+
+# Geçici kayıtlı markalar listesi
+brands = {}
+
+@brand_bp.route("/register", methods=["POST"])
+def register_brand():
+    data = request.get_json()
+    name = data.get("name")
+    email = data.get("email")
+
+    if not name or not email:
+        return jsonify({"error": "Brand name and email are required."}), 400
+
+    if email in brands:
+        return jsonify({"error": "Brand already registered."}), 409
+
+    brands[email] = {"name": name}
+    return jsonify({"message": f"Brand '{name}' registered successfully!"}), 201

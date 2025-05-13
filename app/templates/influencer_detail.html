@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ influencer.name }} - Mira Influencer</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+
+    <h1>{{ influencer.name }}</h1>
+
+    <p><strong>Followers:</strong> {{ influencer.followers }}</p>
+    <p><strong>Category:</strong> {{ influencer.category }}</p>
+    <p><strong>Location:</strong> {{ influencer.location }}</p>
+    <p><strong>Language:</strong> {{ influencer.language }}</p>
+
+    <p><a href="{{ influencer.instagram_link }}" target="_blank">View on Instagram</a></p>
+
+</body>
+</html>

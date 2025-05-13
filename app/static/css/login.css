@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #f9bfbf 50%, #ffcaca 50%);
+}
+
+.login-container {
+    display: flex;
+    height: 100vh;
+}
+
+.left-side, .right-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Sol Kısım */
+.left-side h1 {
+    font-size: 42px;
+    margin-bottom: 0; /* Aradaki boşluğu kaldır */
+    color: #3e3e3e;
+}
+
+.mira-logo {
+    width: 500px;
+    height: 300auto;
+    margin-top: 0;      /* Üstten boşluk olmasın */
+    margin-bottom: 0;   /* Alttan boşluk da olmasın */
+}
+
+.brand-name {
+    font-size: 28px;
+    font-weight: bold;
+    color: #3e3e3e;
+}
+
+/* Sağ Kısım */
+
+.right-side {
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    max-width: 400px;
+    width: 100%;
+    margin-right: 60px;  /* Bu satırı EKLE */
+}
+
+.login-title {
+    font-size: 26px;
+    color: #c62857;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 16px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 0 2px #aaa;
+    font-size: 16px;
+}
+
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #e84a7b;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    background-color: #d9366b;
+}
+
+.forgot-text {
+    font-size: 13px;
+    margin-bottom: 12px;
+    color: #5a5a5a;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.social-icons img {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.register-text {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+}
+
+.register-text a {
+    color: #c62857;
+    font-weight: bold;
+    text-decoration: none;
+}
