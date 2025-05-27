@@ -49,6 +49,12 @@ body {
 .sidebar button:last-child {
   background-color: #E66B88;
 }
+.sidebar-logo {
+  width: 120px; /* eski hali 80px-100px gibi küçükse artırdık */
+  height: auto;
+  margin: 10px 0;
+}
+
 
   
   /* Başlık */
@@ -300,13 +306,17 @@ body {
 }
 
 .top-bar .logo img {
-  height: 60px;
+  height: 80px;  /* artırarak büyütme */
 }
+
 
 .menu-buttons {
   display: flex;
-  gap: 15px;
+  justify-content: center; 
+  gap: 10px;
+  flex-wrap: wrap;
 }
+
 
 .menu-buttons button {
   background-color: #b04545;
