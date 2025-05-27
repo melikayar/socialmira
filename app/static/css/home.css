@@ -23,14 +23,15 @@ body {
   
   /* Sol Menü */
   .sidebar {
-  position: absolute;
+  position: fixed; /* absolute yerine fixed kullan */
   top: 120px;
-  left: 10px;
+  left: 20px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
   z-index: 10;
 }
+
 
 .sidebar button {
   background-color: #984040;
@@ -40,8 +41,9 @@ body {
   border-radius: 12px;
   font-size: 14px;
   cursor: pointer;
-  width: 130px;
+  width: 150px;
   text-align: left;
+  padding: 10px 16px;
 }
 
 .sidebar button:last-child {
@@ -73,14 +75,17 @@ body {
   }
   
   /* Influencer Kartları */
-  .card-container {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    padding: 20px;
-    margin-left: 150px;
-  }
+  .card-container,
+.influencer-list {
+  margin-left: 220px; /* Menüyü çarpmaması için boşluk */
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding: 20px;
+  margin-left: 150px; /* Bu satır iki kere var, birini sil */
+}
+
   
   .influencer-card {
     background-color: #FFE4E4;
