@@ -22,15 +22,28 @@ body {
   }
   
   /* Sol Menü */
-  .sidebar {
-  position: fixed; /* absolute yerine fixed kullan */
-  top: 120px;
+ /* Sol Menü */
+.sidebar {
+  position: absolute;
+  top: 130px;
   left: 20px;
+  width: 160px; /* Daha dar */
   display: flex;
   flex-direction: column;
   gap: 10px;
   z-index: 10;
 }
+
+/* Kartların container'ı */
+.card-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 20px;
+  margin-left: 200px;  /* Sol menüye çarpmasın diye boşluk bırak */
+}
+
 
 
 .sidebar button {
@@ -50,10 +63,10 @@ body {
   background-color: #E66B88;
 }
 .sidebar-logo {
-  width: 120px; /* eski hali 80px-100px gibi küçükse artırdık */
-  height: auto;
-  margin: 10px 0;
+  width: 180px;
+  margin-bottom: 10px;
 }
+
 
 
   
