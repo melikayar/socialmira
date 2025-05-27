@@ -94,15 +94,14 @@ body {
   }
   
   /* Influencer Kartları */
-  .card-container,
-.influencer-list {
-  margin-left: 220px; /* Menüyü çarpmaması için boşluk */
+ .card-container {
   display: flex;
   justify-content: center;
-  gap: 30px;
   flex-wrap: wrap;
+  gap: 30px;
+  margin: 0 auto;
+  max-width: 1200px;
   padding: 20px;
-  margin-left: 150px; /* Bu satır iki kere var, birini sil */
 }
 
   
