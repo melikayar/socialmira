@@ -324,9 +324,9 @@ body {
 
 .menu-buttons {
   display: flex;
-  justify-content: center; 
+  justify-content: center; /* ortalar */
   gap: 10px;
-  flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 
@@ -338,4 +338,10 @@ body {
   border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
+}
+
+.button-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
