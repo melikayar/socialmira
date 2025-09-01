@@ -212,57 +212,55 @@ h1, .section-title {
   gap: 20px;
 }
 
-.influencers {
-  flex: 3; 
-
-.brands {
-  flex: 1;
+.container{
+  display: flex;
+  gap: 24px;
 }
+
+.influencers{ flex: 1 1 0; }
+
+
+.brands{
+  flex: 0 0 280px;   
+  max-width: 280px; 
+  margin-left: auto;
+  position: sticky;  
+  top: 24px;
+}
+
 
 
 /* Brand Kart */
-.brand-card {
-  background-color: #ff8ca1;
-  padding: 20px;
+.brand-list{
+  display: grid;
+  grid-template-columns: 1fr;  
+}
+
+.brand-card{
+  padding: 12px 14px;
   border-radius: 16px;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  transition: transform .15s ease, box-shadow .15s ease;
 }
 
-.brand-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 22px rgba(0,0,0,0.16);
+.brand-card img{
+  width: 56px;  
+  height: 56px;
+  object-fit: cover;
 }
 
-.brand-card img {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
-  margin-bottom: 10px;
-  border-radius: 10px;
-  background-color: #fff;
-  padding: 5px;
+.brand-card h4{
+  font-size: 14px;
+  margin: 6px 0 4px;
 }
 
-.brand-card h4 {
-  font-size: 16px;
-  font-weight: 800;
-  color: #000;
-  margin: 8px 0 4px;
-}
-.brand-card p {
-  font-size: 13px;
-  color: #fff;
-  margin: 0;
+.brand-card p{
+  font-size: 12px;
   line-height: 1.4;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;              /* ⬅️ اینو اضافه کن */
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-
 
 /* ===========================
    Yardımcı / Genel
@@ -305,5 +303,4 @@ h1, .section-title {
 
 @media (max-width: 380px) {
   .card-container { grid-template-columns: 1fr; }
-}
 }
