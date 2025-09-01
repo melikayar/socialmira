@@ -182,8 +182,7 @@ h1, .section-title {
 /* ==================================
    Brands Sütunu (Sağ Kolon)
    ================================== */
-.brands-section { /* .page grid içinde sağ kolona doğal yerleşir */ }
-
+.brands-section 
 .influencer-warning-label {
   position: sticky;   /* fixed yerine sticky: sağ kolonda kalır */
   top: 12px;
@@ -252,7 +251,6 @@ h1, .section-title {
   color: #000;
   margin: 8px 0 4px;
 }
-
 .brand-card p {
   font-size: 13px;
   color: #fff;
@@ -260,9 +258,11 @@ h1, .section-title {
   line-height: 1.4;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;              /* ⬅️ اینو اضافه کن */
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
 
 /* ===========================
    Yardımcı / Genel
@@ -305,4 +305,5 @@ h1, .section-title {
 
 @media (max-width: 380px) {
   .card-container { grid-template-columns: 1fr; }
+}
 }
