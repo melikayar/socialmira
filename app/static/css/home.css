@@ -1,264 +1,239 @@
+/* ===========================
+   HOME.CSS – SocialMira
+   =========================== */
+
+/* ---- Temel ---- */
+
+
+html, body {
+  height: 100%;
+}
+
 body {
-    background-color: #FFCACA;
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-  }
-  
-  /* Üst Menü */
-  nav {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    background-color: #FFCACA;
-    padding: 20px;
-    font-size: 18px;
-  }
-  
-  nav a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-  }
-  
-  /* Sol Menü */
- /* Sol Menü */
-.sidebar {
-  position: absolute;
-  top: 130px;
-  left: 20px;
-  width: 160px; /* Daha dar */
+  background-color: #FFCACA;
+  margin: 0;
+  font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif;
+  color: #000;
+}
+
+/* ---- Üst Bar / Logo / Menü ---- */
+.top-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 28px;
+  background-color: #fff0f5;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.top-bar .logo img {
+  height: 72px;
+  display: block;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+nav a:hover {
+  background: rgba(0,0,0,0.06);
+}
+
+.menu-buttons {
+  display: flex;
+  align-items: center;
   gap: 10px;
-  z-index: 10;
 }
 
-/* Kartların container'ı */
-.card-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
-  padding: 20px;
-  margin-left: 200px;  /* Sol menüye çarpmasın diye boşluk bırak */
-}
-
-
-
-.sidebar button {
-  background-color: #984040;
-  color: white;
-  border: none;
-  padding: 8px 14px;
-  border-radius: 12px;
-  font-size: 14px;
-  cursor: pointer;
-  width: 150px;
-  text-align: left;
+.menu-buttons button {
+  background-color: #b04545;
+  color: #fff;
   padding: 10px 16px;
+  border: 0;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
 }
 
-.sidebar button:last-child {
-  background-color: #E66B88;
-}
-.sidebar-logo {
-  width: 180px;
-  margin-bottom: 10px;
+.menu-buttons button:hover {
+  filter: brightness(.95);
 }
 
+/* ---- Sayfa Başlığı / Banner ---- */
+h1, .section-title {
+  text-align: center;
+  margin: 32px 0 12px;
+  font-weight: 800;
+  color: #000;
+}
 
+.section-title {
+  font-size: 24px;
+}
 
-  
-  /* Başlık */
-  h1 {
-    text-align: center;
-    margin-top: 40px;
-    color: #000000;
-  }
-  
-  /* Arama Kutusu */
-  .search-bar {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-  }
-  
-  .search-bar input {
-    padding: 14px 24px;
-    width: 400px;
-    font-size: 16px;
-    border-radius: 20px;
-    border: 1px solid #ccc;
-    background-color: #FFE4E4;
-  }
-  
-  /* Influencer Kartları */
- .card-container {
+.welcome-banner {
+  background-color: #fff0f5;
+  color: #c62857;
+  font-weight: 700;
+  text-align: center;
+  padding: 12px 18px;
+  margin: 12px auto 0;
+  border-radius: 10px;
+  width: min(900px, 92%);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* ---- Arama Kutusu ---- */
+.search-bar {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
-  margin: 0 auto;
+  gap: 10px;
+  margin: 18px 0 8px;
+  padding: 0 16px;
+}
+
+.search-bar input {
+  padding: 12px 18px;
+  width: min(560px, 92%);
+  font-size: 16px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  background-color: #FFE4E4;
+  outline: none;
+}
+
+.search-bar input:focus {
+  border-color: #e84a7b;
+  box-shadow: 0 0 0 3px rgba(232,74,123,0.15);
+}
+
+/* ==================================
+   Ana Yerleşim (Sol Influencers / Sağ Brands)
+   ================================== */
+.page {
+  display: grid;
+  grid-template-columns: 1fr 340px; /* sağ kolon sabit */
+  gap: 32px;
   max-width: 1200px;
-  padding: 20px;
+  margin: 0 auto;
+  padding: 24px;
 }
 
-  
-  .influencer-card {
-    background-color: #FFE4E4;
-    border-radius: 20px;
-    padding: 10px;
-    text-align: center;
-    width: 180px;
-    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
-  }
-  
-  .influencer-card img {
-    width: 100%;
-    border-radius: 10px;
-  }
-  
-  .influencer-card p {
-    font-weight: bold;
-    margin-top: 10px;
-  }
-  
-  .influencer-card span {
-    color: gray;
-    font-size: 14px;
+/* Eski sidebar hack'lerini kapatıyoruz (kullanılmıyorsa görünmesin) */
+.sidebar { display: none; }
 
-  }
-  
-  .influencer-warning-label {
-    position: fixed;
-    top: 100px;  /* daha aşağıya alındı */
-    right: 40px;
-    background-color: #fff0f5;
-    border-left: 6px solid #e84a7b;
-    padding: 14px 20px;
-    width: 320px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    font-family: 'Poppins', sans-serif;
-    z-index: 999;
-  }
-  
-  .warning-label-title {
-    background-color: #e84a7b;
-    color: white;
-    font-weight: bold;
-    padding: 4px 10px;
-    border-radius: 4px;
-    font-size: 13px;
-    display: inline-block;
-    margin-bottom: 8px;
-  }
-  
-  .influencer-warning-label p {
-    font-size: 14px;
-    color: #444;
-    margin: 0;
-    line-height: 1.4;
-  }
-  
-  .influencer-scroll-wrapper {
-    overflow-x: auto;
-    white-space: nowrap;
-    padding: 20px;
-    margin: 0 auto;
-    max-width: 85%;
-}
-
-.influencer-list {
-    display: inline-flex;
-    gap: 30px;
+/* ---- Influencer Kart Alanı ---- */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
 }
 
 .influencer-card {
-    flex: 0 0 auto;
-    width: 200px;
-    background-color: #FFE4E4;
-    border-radius: 20px;
-    text-align: center;
-    padding: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background-color: #FFE4E4;
+  border-radius: 20px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.influencer-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
 
 .influencer-card img {
-    width: 100%;
-    border-radius: 10px;
-
-}
-.influencer-list {
-  margin-left: 180px; /* Sol menüye çarpmaması için boşluk */
-}
-
-.brand-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
-  margin-top: 40px;
-  padding-bottom: 50px;
-}
-.brand-card p {
-  font-size: 14px;
-  color: #333;
-  margin-top: 5px;
-  display: -webkit-box;
- -webkit-line-clamp: 2;
- -webkit-box-orient: vertical;
-  overflow: hidden;
-
-  text-align: center;
-}
-
-
-.brand-card img {
   width: 100%;
-  max-height: 100px;
-  object-fit: contain;
-  margin-bottom: 10px;
+  height: auto;
+  border-radius: 12px;
+  display: block;
 }
 
-/* ===================== */
-/* BRANDS SECTION STYLE */
-/* ===================== */
-
-.brands-section {
-  text-align: center;
-  margin-top: 60px;
-  padding: 20px;
+.influencer-card p {
+  font-weight: 700;
+  margin: 10px 0 2px;
 }
 
-.brands-section h2 {
-  font-size: 28px;
-  font-weight: bold;
-  color: #3e3e3e;
-  margin-bottom: 40px;
-  text-align: center;
+.influencer-card span {
+  color: #666;
+  font-size: 13px;
 }
 
-.brand-container {
+/* ---- (İsteğe bağlı) Yatay kaydırma modu kullanacaksan: ---- */
+/* .influencer-scroll-wrapper { overflow-x: auto; white-space: nowrap; padding: 12px 0; }
+.influencer-list { display: inline-flex; gap: 24px; } */
+
+/* ==================================
+   Brands Sütunu (Sağ Kolon)
+   ================================== */
+.brands-section { /* .page grid içinde sağ kolona doğal yerleşir */ }
+
+.influencer-warning-label {
+  position: sticky;   /* fixed yerine sticky: sağ kolonda kalır */
+  top: 12px;
+  background-color: #fff0f5;
+  border-left: 6px solid #e84a7b;
+  padding: 12px 14px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 16px;
+  z-index: 1;
+}
+
+.warning-label-title {
+  background-color: #e84a7b;
+  color: #fff;
+  font-weight: 800;
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 12px;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+.container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
+  justify-content: space-between; 
+  align-items: flex-start; 
+  gap: 20px;
 }
 
+.influencers {
+  flex: 3; 
+
+.brands {
+  flex: 1;
+}
+
+
+/* Brand Kart */
 .brand-card {
-  background-color: #ff8ca1; /* Koyu pembe arka plan */
+  background-color: #ff8ca1;
   padding: 20px;
   border-radius: 16px;
-  width: 200px;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform .15s ease, box-shadow .15s ease;
 }
 
 .brand-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.16);
 }
 
 .brand-card img {
@@ -273,9 +248,9 @@ body {
 
 .brand-card h4 {
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 800;
   color: #000;
-  margin: 10px 0 6px;
+  margin: 8px 0 4px;
 }
 
 .brand-card p {
@@ -284,64 +259,50 @@ body {
   margin: 0;
   line-height: 1.4;
   display: -webkit-box;
- -webkit-line-clamp: 2;
- -webkit-box-orient: vertical;
- overflow: hidden;
-
-}
-.welcome-banner {
-  background-color: #fff0f5;
-  padding: 12px 20px;
-  margin: 10px auto;
-  text-align: center;
-  font-weight: bold;
-  color: #c62857;
-  border-radius: 10px;
-  width: 90%;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-.section-title {
-  text-align: center;
-  font-size: 24px;
-  font-weight: bold;
-  margin: 40px 0 20px;
-}
-.top-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 40px;
-  background-color: #fff0f5;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-.top-bar .logo img {
-  height: 80px;  /* artırarak büyütme */
-}
-
-
-.menu-buttons {
-  display: flex;
-  justify-content: center; /* ortalar */
-  gap: 10px;
-  margin-top: 20px;
-}
-
-
-.menu-buttons button {
-  background-color: #b04545;
-  color: white;
-  padding: 10px 18px;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
+/* ===========================
+   Yardımcı / Genel
+   =========================== */
 .button-wrapper {
   width: 100%;
   display: flex;
   justify-content: center;
+}
+
+/* ===========================
+   Responsive
+   =========================== */
+@media (max-width: 1100px) {
+  .page {
+    padding: 16px;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 980px) {
+  .page {
+    grid-template-columns: 1fr; /* kolonlar alt alta */
+  }
+  .brand-container {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+  .influencer-warning-label {
+    position: relative; /* küçük ekranda sayfa akışına girsin */
+    top: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .top-bar { padding: 12px 16px; }
+  .top-bar .logo img { height: 56px; }
+  .search-bar input { width: 100%; }
+  .card-container { grid-template-columns: 1fr 1fr; gap: 14px; }
+}
+
+@media (max-width: 380px) {
+  .card-container { grid-template-columns: 1fr; }
 }

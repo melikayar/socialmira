@@ -3,207 +3,220 @@
 <head>
   <meta charset="UTF-8" />
   <title>Influencer List | Mira</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
 </head>
 <body>
-  
+
   {% if session.user_email %}
-  <div class="welcome-banner">
+    <div class="welcome-banner">
       Welcome, {{ session.user_email }} 👋
-  </div>
-{% endif %}
+    </div>
+  {% endif %}
 
-  <!-- Üst Menü -->
-  <nav>
-    <a href="#">INFLUENCERS</a>
-    <a href="#">BRANDS</a>
-    <a href="#">SOCIAL MEDIA PLANS</a>
-    <a href="#">EVENTS</a>
-    <a href="#">COLLABORATIONS</a>
-  </nav>
-  
-  <div class="influencer-warning-label">
-    <label class="warning-label-title">Note</label>
-    <p>⚠️ Please select an influencer whose audience and style match your brand's identity. The right match means better engagement!</p>
-  </div>
-  
-  <!-- Sol Menü (Sidebar) -->
- <div class="top-bar">
-  <div class="logo">
-    <img src="{{ url_for('static', filename='images/miralogo.png') }}" alt="MIRA">
-  </div>
+  <!-- Üst Bar -->
+  <header class="top-bar">
+    <div class="logo">
+      <img src="{{ url_for('static', filename='images/miralogo.png') }}" alt="MIRA">
+    </div>
 
-  <!-- Başlık -->
-  <h1>Influencers Lists</h1>
+    <nav>
+      <a href="#">MIRA SECTIONS</a>
+      <a href="#">BRANDS</a>
+      <a href="#">INFLUENCERS</a>
+      <a href="#">SOCIAL MEDIA PLANS</a>
+    </nav>
 
-  <!-- Arama Kutusu -->
+    <div class="menu-buttons">
+      <button>Login</button>
+      <button>Sign Up</button>
+    </div>
+  </header>
+
+  <!-- Arama -->
   <div class="search-bar">
     <input type="text" placeholder="Search INFLUENCER ID" />
   </div>
 
- <!-- Influencer Kartları -->
-  <div class="card-container">
+  <!-- 2 Kolon: Sol (Influencers) / Sağ (Brands) -->
+  <div class="page">
 
-  <div class="influencer-card">
-    <a href="https://www.instagram.com/katykargozar/reels/" target="_blank">
-      <img src="{{ url_for('static', filename='images/katykargozar.jpg') }}" alt="katykargozar">
-    </a>
-    <p>@katykargozar</p>
-    <span>397K followers</span>
-  </div>
+    <!-- SOL KOLON: Influencers -->
+    <section>
+      <h1 class="section-title">Influencers Lists</h1>
 
-  <div class="influencer-card">
-    <a href="https://www.instagram.com/mozhdeh_blogjourney?igsh=ajh0YWN5eHlsY3Z5" target="_blank">
-      <img src="{{ url_for('static', filename='images/mozhdeh_blogjourney.jpg') }}" alt="mozhdeh_blogjourney">
-    </a>
-    <p>@mozhdeh_blogjourney</p>
-    <span>190K followers</span>
-  </div>
+      <div class="card-container">
+        <!-- Influencer: Katy -->
+        <div class="influencer-card">
+          <a href="https://www.instagram.com/katykargozar/reels/" target="_blank" rel="noopener">
+            <img src="{{ url_for('static', filename='images/katykargozar.jpg') }}" alt="katykargozar">
+          </a>
+          <p>@katykargozar</p>
+          <span>397K followers</span>
+        </div>
 
-  <div class="influencer-card">
-    <a href="https://www.instagram.com/sanam_samipoor/?igsh=MWV4cndybHVuMXZ0bw" target="_blank">
-      <img src="{{ url_for('static', filename='images/sanam_samipoor.jpg') }}" alt="sanam_samipoor">
-    </a>
-    <p>@sanam_samipoor</p>
-    <span>2.9M followers</span>
-  </div>
-<!-- Influencer: Aynaz -->
-<div class="influencer-card">
-  <a href="https://www.instagram.com/aynaz_z1?igsh=N3llOWh4NnZuaXFu" target="_blank">
-    <img src="{{ url_for('static', filename='images/aynaz.jpg') }}" alt="aynaz_z1">
-  </a>
-  <p>@aynaz_z1</p>
-  <span>130K followers</span>
-</div>
+        <!-- Influencer: Mozhdeh -->
+        <div class="influencer-card">
+          <a href="https://www.instagram.com/mozhdeh_blogjourney?igsh=ajh0YWN5eHlsY3Z5" target="_blank" rel="noopener">
+            <img src="{{ url_for('static', filename='images/mozhdeh_blogjourney.jpg') }}" alt="mozhdeh_blogjourney">
+          </a>
+          <p>@mozhdeh_blogjourney</p>
+          <span>190K followers</span>
+        </div>
 
-<!-- Influencer: Hlnsfff -->
-<div class="influencer-card">
-  <a href="https://www.instagram.com/hlnsfff/?igsh=N3YxZmQ3eGYzOXZw" target="_blank">
-    <img src="{{ url_for('static', filename='images/hlnsfff.jpg') }}" alt="hlnsfff">
-  </a>
-  <p>@hlnsfff</p>
-  <span>29.9K followers</span>
-</div>
+        <!-- Influencer: Sanam -->
+        <div class="influencer-card">
+          <a href="https://www.instagram.com/sanam_samipoor/?igsh=MWV4cndybHVuMXZ0bw" target="_blank" rel="noopener">
+            <img src="{{ url_for('static', filename='images/sanam_samipoor.jpg') }}" alt="sanam_samipoor">
+          </a>
+          <p>@sanam_samipoor</p>
+          <span>2.9M followers</span>
+        </div>
 
-<!-- Influencer: Nushhin -->
-<div class="influencer-card">
-  <a href="https://www.instagram.com/nushhin/?igsh=cjBvaHI3eHd0OTg4" target="_blank">
-    <img src="{{ url_for('static', filename='images/nushhin.jpg') }}" alt="nushhin">
-  </a>
-  <p>@nushhin</p>
-  <span>84.8K followers</span>
-</div>
+        <!-- Influencer: Aynaz -->
+        <div class="influencer-card">
+          <a href="https://www.instagram.com/aynaz_z1?igsh=N3llOWh4NnZuaXFu" target="_blank" rel="noopener">
+            <img src="{{ url_for('static', filename='images/aynaz.jpg') }}" alt="aynaz_z1">
+          </a>
+          <p>@aynaz_z1</p>
+          <span>130K followers</span>
+        </div>
 
-<!-- Influencer: Nazanin Z -->
-<div class="influencer-card">
-  <a href="https://www.instagram.com/nznin.z1/" target="_blank">
-    <img src="{{ url_for('static', filename='images/nznin.jpg') }}" alt="nznin.z1">
-  </a>
-  <p>@nznin.z1</p>
-  <span>26.5K followers</span>
-</div>
+        <!-- Influencer: hlnsfff -->
+        <div class="influencer-card">
+          <a href="https://www.instagram.com/hlnsfff/?igsh=N3YxZmQ3eGYzOXZw" target="_blank" rel="noopener">
+            <img src="{{ url_for('static', filename='images/hlnsfff.jpg') }}" alt="hlnsfff">
+          </a>
+          <p>@hlnsfff</p>
+          <span>29.9K followers</span>
+        </div>
 
-<!-- Influencer: Melika Tahami -->
-<div class="influencer-card">
-  <a href="https://www.instagram.com/momika.tahami/?hl=en" target="_blank">
-    <img src="{{ url_for('static', filename='images/melika.jpg') }}" alt="momika.tahami">
-  </a>
-  <p>@momika.tahami</p>
-  <span>323K followers</span>
-</div>
+        <!-- Influencer: nushhin -->
+        <div class="influencer-card">
+          <a href="https://www.instagram.com/nushhin/?igsh=cjBvaHI3eHd0OTg4" target="_blank" rel="noopener">
+            <img src="{{ url_for('static', filename='images/nushhin.jpg') }}" alt="nushhin">
+          </a>
+          <p>@nushhin</p>
+          <span>84.8K followers</span>
+        </div>
 
-<div class="influencer-card">
-  <a href="https://www.instagram.com/pamela_rf/" target="_blank">
-    <img src="{{ url_for('static', filename='images/pamela.jpg') }}" alt="pamela_rf">
-  </a>
-  <p>@pamela_rf</p>
-  <span> 9.M followers</span>
-</div>
+        <!-- Influencer: nznin.z1 -->
+        <div class="influencer-card">
+          <a href="https://www.instagram.com/nznin.z1/" target="_blank" rel="noopener">
+            <img src="{{ url_for('static', filename='images/nznin.jpg') }}" alt="nznin.z1">
+          </a>
+          <p>@nznin.z1</p>
+          <span>26.5K followers</span>
+        </div>
 
+        <!-- Influencer: Melika -->
+        <div class="influencer-card">
+          <a href="https://www.instagram.com/momika.tahami/?hl=en" target="_blank" rel="noopener">
+            <img src="{{ url_for('static', filename='images/melika.jpg') }}" alt="momika.tahami">
+          </a>
+          <p>@momika.tahami</p>
+          <span>323K followers</span>
+        </div>
 
-</div>
-<div class="influencer-scroll-wrapper">
-  <div class="influencer-list">
-    <!-- Influencer Card 1 -->
-    <div class="influencer-card"> ... </div>
-    <!-- Influencer Card 2 -->
-    <div class="influencer-card"> ... </div>
-    <!-- Diğer kartlar... -->
-  </div>
-  
-  <h2 class="section-title">Top Brands We've Collaborated With</h2>
+        <!-- Influencer: Pamela -->
+        <div class="influencer-card">
+          <a href="https://www.instagram.com/pamela_rf/" target="_blank" rel="noopener">
+            <img src="{{ url_for('static', filename='images/pamela.jpg') }}" alt="pamela_rf">
+          </a>
+          <p>@pamela_rf</p>
+          <span>9M followers</span>
+        </div>
 
-<div class="brand-list">
+      </div><!-- /.card-container -->
+    </section>
 
-  <div class="brand-card">
-    <a href="https://www.instagram.com/turyap.dubai/" target="_blank">
-      <img src="{{ url_for('static', filename='images/turyap.jpg') }}" alt="turyap dubai">
-    </a>
-    <p><strong>@turyap.dubai</strong></p>
-    <p>Premium real estate investments in Dubai</p>
-  </div>
+    <!-- SAĞ KOLON: Brands -->
+    <aside class="brands-section">
+      <!-- Not balonu: sticky -->
+      <div class="influencer-warning-label">
+        <span class="warning-label-title">Note</span>
+        <p>⚠️ Please select an influencer whose audience and style match your brand's identity. The right match means better engagement!</p>
+      </div>
 
-  <div class="brand-card">
-    <a href="https://www.instagram.com/maybelline/" target="_blank">
-      <img src="{{ url_for('static', filename='images/maybelline.jpg') }}" alt="maybelline">
-    </a>
-    <p><strong>@maybelline</strong></p>
-    <p>Bold makeup for every look</p>
-  </div>
+      <h2 class="section-title">Top Brands We've Collaborated With</h2>
 
-  <div class="brand-card">
-    <a href="https://www.instagram.com/lorealparis/" target="_blank">
-      <img src="{{ url_for('static', filename='images/loreal.jpg') }}" alt="lorealparis">
-    </a>
-    <p><strong>@lorealparis</strong></p>
-    <p>Because you're worth it</p>
-  </div>
+      <!-- Brand grid -->
+      <div class="brand-container">
+        <div class="brand-card">
+          <a href="https://www.instagram.com/turyap.dubai/" target="_blank" rel="noopener">
+            <img src="{{ url_for('static', filename='images/turyap.jpg') }}" alt="turyap dubai">
+          </a>
+          <h4>@turyap.dubai</h4>
+          <p>Premium real estate investments in Dubai</p>
+        </div>
 
-  <div class="brand-card">
-    <a href="https://www.instagram.com/fashionnova/" target="_blank">
-      <img src="{{ url_for('static', filename='images/fashionnova.jpg') }}" alt="fashionnova">
-    </a>
-    <p><strong>@fashionnova</strong></p>
-    <p>Trendy outfits for every body</p>
-  </div>
+        <div class="brand-card">
+          <a href="https://www.instagram.com/maybelline/" target="_blank" rel="noopener">
+            <img src="{{ url_for('static', filename='images/maybelline.jpg') }}" alt="maybelline">
+          </a>
+          <h4>@maybelline</h4>
+          <p>Bold makeup for every look</p>
+        </div>
 
-  <div class="brand-card">
-    <a href="https://www.instagram.com/fentybeauty/" target="_blank">
-      <img src="{{ url_for('static', filename='images/fenty.jpg') }}" alt="fentybeauty">
-    </a>
-    <p><strong>@fentybeauty</strong></p>
-    <p>Beauty for all</p>
-  </div>
+        <div class="brand-card">
+          <a href="https://www.instagram.com/lorealparis/" target="_blank" rel="noopener">
+            <img src="{{ url_for('static', filename='images/loreal.jpg') }}" alt="lorealparis">
+          </a>
+          <h4>@lorealparis</h4>
+          <p>Because you're worth it</p>
+        </div>
 
-  <div class="brand-card">
-    <a href="https://www.instagram.com/zara/" target="_blank">
-      <img src="{{ url_for('static', filename='images/zara.jpg') }}" alt="zara">
-    </a>
-    <p><strong>@zara</strong></p>
-    <p>Fast fashion, high impact</p>
-  </div>
+        <div class="brand-card">
+          <a href="https://www.instagram.com/fashionnova/" target="_blank" rel="noopener">
+            <img src="{{ url_for('static', filename='images/fashionnova.jpg') }}" alt="fashionnova">
+          </a>
+          <h4>@fashionnova</h4>
+          <p>Trendy outfits for every body</p>
+        </div>
 
-  <div class="brand-card">
-    <a href="https://www.instagram.com/mango/" target="_blank">
-      <img src="{{ url_for('static', filename='images/mango.jpg') }}" alt="mango">
-    </a>
-    <p><strong>@mango</strong></p>
-    <p>Style that lasts</p>
-  </div>
+        <div class="brand-card">
+          <a href="https://www.instagram.com/fentybeauty/" target="_blank" rel="noopener">
+            <img src="{{ url_for('static', filename='images/fenty.jpg') }}" alt="fentybeauty">
+          </a>
+          <h4>@fentybeauty</h4>
+          <p>Beauty for all</p>
+        </div>
 
-  <div class="brand-card">
-    <a href="https://www.instagram.com/victoriassecret/" target="_blank">
-      <img src="{{ url_for('static', filename='images/victoria.jpg') }}" alt="victoriassecret">
-    </a>
-    <p><strong>@victoriassecret</strong></p>
-    <p>Legendary lingerie</p>
-  </div>
+        <div class="brand-card">
+          <a href="https://www.instagram.com/zara/" target="_blank" rel="noopener">
+            <img src="{{ url_for('static', filename='images/zara.jpg') }}" alt="zara">
+          </a>
+          <h4>@zara</h4>
+          <p>Fast fashion, high impact</p>
+        </div>
 
-  <div class="brand-card">
-    <a href="https://www.instagram.com/merlikabeauty/" target="_blank">
-      <img src="{{ url_for('static', filename='images/merlikabeauty.jpg') }}" alt="merlikabeauty">
-    </a>
-    <p><strong>@merlikabeauty</strong></p>
-    <p>Elevate your beauty</p>
-  </div>
-</div>
+        <div class="brand-card">
+          <a href="https://www.instagram.com/mango/" target="_blank" rel="noopener">
+            <img src="{{ url_for('static', filename='images/mango.jpg') }}" alt="mango">
+          </a>
+          <h4>@mango</h4>
+          <p>Style that lasts</p>
+        </div>
+
+        <div class="brand-card">
+          <a href="https://www.instagram.com/victoriassecret/" target="_blank" rel="noopener">
+            <img src="{{ url_for('static', filename='images/victoria.jpg') }}" alt="victoriassecret">
+          </a>
+          <h4>@victoriassecret</h4>
+          <p>Legendary lingerie</p>
+        </div>
+
+        <div class="brand-card">
+          <a href="https://www.instagram.com/merlikabeauty/" target="_blank" rel="noopener">
+            <img src="{{ url_for('static', filename='images/merlikabeauty.jpg') }}" alt="merlikabeauty">
+          </a>
+          <h4>@merlikabeauty</h4>
+          <p>Elevate your beauty</p>
+        </div>
+      </div><!-- /.brand-container -->
+    </aside>
+
+  </div><!-- /.page -->
+
+</body>
+</html>
